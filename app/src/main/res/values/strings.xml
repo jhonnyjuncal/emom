@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">EMOM</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Configuracion</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="label_inicio">Inicio</string>
+    <string name="label_historico">Historico</string>
+    <string name="label_compartir">Compartir</string>
+    <string name="label_desarrollador">Desarrollador</string>
+    <string name="label_acerca">Acerca de</string>
 </resources>

@@ -1,5 +1,6 @@
 package emom.jhonny.com.emom;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             // Servicio para mantener la pantalla encendida
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
 
             crono = (Chronometer)findViewById(R.id.chronometer);
             editVeces = (EditText)findViewById(R.id.editText);
@@ -140,13 +140,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 estado = false;
                 crono.stop();
                 editVeces.setEnabled(true);
-                fab.setBackgroundDrawable(getResources().getDrawable(R.mipmap.stop_red));
+                fab.setImageResource(R.mipmap.play_green);
 
             } else {
                 // cuando el cronometro esta apagado
                 estado = true;
                 editVeces.setEnabled(false);
-                fab.setBackgroundDrawable(getResources().getDrawable(R.mipmap.play_green));
+                fab.setImageResource(R.mipmap.stop_red);
 
                 if(primeraVez) {
                     crono.setBase(SystemClock.elapsedRealtime());
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        //getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -258,41 +258,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent intent = null;
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.nav_inicio) {
+            intent = new Intent(this, MainActivity.class);
         } else if (id == R.id.nav_gallery) {
-
+            intent = new Intent(this, EnConstruccion.class);
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
+            intent = new Intent(this, EnConstruccion.class);
+        } else if (id == R.id.nav_settings) {
+            intent = new Intent(this, EnConstruccion.class);
+        } else if (id == R.id.nav_compartir) {
+            intent = new Intent(this, EnConstruccion.class);
         } else if (id == R.id.nav_send) {
-
+            intent = new Intent(this, EnConstruccion.class);
+        } else if (id == R.id.nav_desarrollador) {
+            intent = new Intent(this, EnConstruccion.class);
+        } else if (id == R.id.nav_acerca) {
+            intent = new Intent(this, EnConstruccion.class);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
+        startActivity(intent);
+
         return true;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //this.wakelock.release();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        //wakelock.acquire();
     }
 
     @Override
     public void onSaveInstanceState(Bundle icicle) {
         super.onSaveInstanceState(icicle);
-        //this.wakelock.release();
     }
 }
