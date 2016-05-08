@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EMOM</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="label_inicio">Home</string>
+    <string name="label_historico">Historical</string>
+    <string name="label_compartir">Share</string>
+    <string name="label_desarrollador">Developer</string>
+    <string name="label_acerca">About</string>
+    <string name="label_en_construccion_1">This functionality</string>
+    <string name="label_en_construccion_2">is under</string>
+    <string name="label_en_construccion_3">development</string>
+</resources>
