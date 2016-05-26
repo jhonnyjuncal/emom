@@ -13,4 +13,11 @@
     <string name="label_en_construccion_1">Esta funcionalidad</string>
     <string name="label_en_construccion_2">se encuentra</string>
     <string name="label_en_construccion_3">en desarrollo</string>
+    <string name="label_repeticiones">Repeticiones</string>
+    <string name="label_voz">Conteo por voz</string>
+    <string name="label_pantalla">Pantalla activa</string>
+    <string name="label_activada">Activada</string>
+    <string name="label_desactivada">Desactivada</string>
+    <string name="label_si">Si</string>
+    <string name="label_no">No</string>
 </resources>

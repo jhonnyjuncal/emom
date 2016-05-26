@@ -37,9 +37,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REPETICIONES"
+                android:text="@string/label_repeticiones"
                 android:id="@+id/textView2"
-                android:layout_marginRight="30dp" />
+                android:layout_marginRight="30dp"
+                android:textSize="16dp" />
 
             <EditText
                 android:layout_width="50dp"
@@ -57,14 +58,16 @@
                 android:layout_height="50dp"
                 android:text="-"
                 android:id="@+id/boton_menos"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="20dp" />
 
             <Button
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text="+"
                 android:id="@+id/boton_mas"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,17 +76,17 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="CONTEO POR VOZ"
+                android:text="@string/label_voz"
                 android:id="@+id/textView4"
-                android:layout_marginRight="36dp" />
+                android:textSize="16dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activado"
-                android:id="@+id/button3" />
+                android:text="@string/label_activada"
+                android:id="@+id/boton_voz" />
         </LinearLayout>
 
         <LinearLayout
@@ -92,16 +95,16 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="PANTALLA ACTIVA"
+                android:text="@string/label_pantalla"
                 android:id="@+id/textView5"
-                android:layout_marginRight="30dp" />
+                android:textSize="16dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SI"
+                android:text="@string/label_si"
                 android:id="@+id/boton_pantalla" />
         </LinearLayout>
 

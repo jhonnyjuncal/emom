@@ -29,13 +29,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private boolean primeraVez = true;
     private int contador = 0;
     private int numeroVeces = 30;
-    private View vista = null;
+    private boolean pantallaActiva = true;
+    private boolean vozActiva = true;
 
+    private View vista = null;
     private Chronometer crono = null;
     private EditText editVeces = null;
     private Button btnMenos = null;
     private Button btnMas = null;
     private Button btnPantalla = null;
+    private Button btnVoz = null;
     private TextToSpeech textToSpeech = null;
     private FloatingActionButton fab = null;
 
@@ -51,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             setSupportActionBar(toolbar);
 
             // Servicio para mantener la pantalla encendida
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+            if(pantallaActiva)
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
             crono = (Chronometer)findViewById(R.id.chronometer);
             editVeces = (EditText)findViewById(R.id.editText);
@@ -81,15 +85,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             btnPantalla.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String texto = btnPantalla.getText().toString();
-
-                    if(texto.equals("SI")) {
-                        btnPantalla.setText("NO");
-                        System.out.println("Ahora la pantalla se apagara");
+                    if(pantallaActiva) {
+                        pantallaActiva = false;
+                        btnPantalla.setText(getResources().getText(R.string.label_no));
+                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
                     }else {
-                        btnPantalla.setText("SI");
-                        System.out.println("Ahora la pantalla estara encendida");
+                        pantallaActiva = true;
+                        btnPantalla.setText(getResources().getText(R.string.label_si));
+                        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                     }
                 }
             });
@@ -103,7 +107,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             });
 
-            System.out.println("** Numero de repeticiones: " + numeroVeces);
+            btnVoz = (Button) findViewById(R.id.boton_voz);
+            btnVoz.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(vozActiva) {
+                        vozActiva = false;
+                        btnVoz.setText(getResources().getText(R.string.label_desactivada));
+                    }else {
+                        vozActiva = true;
+                        btnVoz.setText(getResources().getText(R.string.label_activada));
+                    }
+                }
+            });
+
 
             fab = (FloatingActionButton) findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
@@ -176,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 case 58: texto_decir = "2"; break;
                                 case 59: texto_decir = "1"; break;
                             }
-                            if(texto_decir != "")
+                            if(texto_decir != "" && vozActiva)
                                 speak(texto_decir);
 
                         }else if(minutos > 0) {

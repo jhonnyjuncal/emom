@@ -13,4 +13,11 @@
     <string name="label_en_construccion_1">This functionality</string>
     <string name="label_en_construccion_2">is under</string>
     <string name="label_en_construccion_3">development</string>
+    <string name="label_repeticiones">Repetitions</string>
+    <string name="label_voz">Voice count</string>
+    <string name="label_pantalla">Active screen</string>
+    <string name="label_activada">Activated</string>
+    <string name="label_desactivada">Disabled</string>
+    <string name="label_si">Yes</string>
+    <string name="label_no">No</string>
 </resources>
